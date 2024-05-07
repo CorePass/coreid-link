@@ -1,0 +1,1 @@
+export { Qr } from './qr';
