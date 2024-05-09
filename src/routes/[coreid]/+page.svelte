@@ -6,6 +6,8 @@
 	import { deviceSherlock } from 'device-sherlock';
 
 	const coreid = $page.params.coreid;
+	const coreidUpper = coreid ? coreid.toUpperCase() : '';
+	const coreidShort = coreid ? `${coreid.substring(0,4).toUpperCase()}…${coreid.slice(-4).toUpperCase()}` : '';
 	const isValidCoreid = Ican.isValid(coreid, true);
 
 	function getAddressIconUrl(address: string): string {
@@ -13,11 +15,39 @@
 	}
 </script>
 
+<svelte:head>
+	{#if coreid && isValidCoreid}
+		<title>Core ID: {coreidUpper}</title>
+		<meta name="description" content="Connect to Core ID via CorePass." />
+		<meta property="og:title" content={`Core ID: ${coreidUpper}`} />
+		<meta property="og:description" content="Connect to Core ID via CorePass." />
+		<meta property="og:type" content="profile" />
+		<meta name="twitter:title" content={`Core ID: ${coreidUpper}`} />
+		<meta name="twitter:description" content="Connect to Core ID via CorePass." />
+	{:else if !coreid}
+		<title>Missing Core ID</title>
+		<meta name="description" content="Core ID is missing or not defined." />
+		<meta property="og:title" content="Missing Core ID" />
+		<meta property="og:description" content="Core ID is missing or not defined." />
+		<meta property="og:type" content="profile" />
+		<meta name="twitter:title" content="Missing Core ID" />
+		<meta name="twitter:description" content="Core ID is missing or not defined." />
+	{:else}
+		<title>Invalid Core ID</title>
+		<meta name="description" content="This Core ID is invalid, please correct it." />
+		<meta property="og:title" content="Invalid Core ID" />
+		<meta property="og:description" content="This Core ID is invalid, please correct it." />
+		<meta property="og:type" content="profile" />
+		<meta name="twitter:title" content="Invalid Core ID" />
+		<meta name="twitter:description" content="This Core ID is invalid, please correct it." />
+	{/if}
+</svelte:head>
+
 <div>
 	{#if coreid && isValidCoreid}
 		<div class="flex items-center justify-center w-full">
 			<img alt={coreid} src={getAddressIconUrl(coreid)} class="h-8 rounded-md mr-4" />
-			<h1 class="text-xl leading-8 select-all cursor-pointer text-black dark:text-white">{`${coreid.substring(0,4).toUpperCase()}…${coreid.slice(-4).toUpperCase()}`}</h1>
+			<h1 class="text-xl leading-8 select-all cursor-pointer text-black dark:text-white">{coreidShort}</h1>
 		</div>
 	{/if}
 	<div class="divide-y divide-gray-300/50 text-slate-500 dark:text-slate-400">

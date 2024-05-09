@@ -2,6 +2,16 @@
 	import { page } from '$app/stores';
 </script>
 
+<svelte:head>
+	<title>Error {$page.status}</title>
+	<meta name="description" content="An error occurred while processing your request." />
+	<meta property="og:title" content={`Error ${$page.status}`} />
+	<meta property="og:description" content="An error occurred while processing your request." />
+	<meta property="og:type" content="website" />
+	<meta name="twitter:title" content={`Error ${$page.status}`} />
+	<meta name="twitter:description" content="An error occurred while processing your request." />
+</svelte:head>
+
 <div>
 	<h1 class="text-2xl font-bold pb-4 text-black dark:text-white">
 		{#if $page.status === 404}
