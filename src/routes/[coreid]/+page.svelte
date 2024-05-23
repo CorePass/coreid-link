@@ -21,7 +21,7 @@
 
 <svelte:head>
 	{#if coreid && isValidCoreid}
-		<title>Core ID: {coreidPrint}</title>
+		<title>Core ID: {coreidShort} ≡ {coreidPrint}</title>
 		<meta name="description" content="Connect to Core ID via CorePass." />
 		<meta property="og:title" content={`Core ID: ${coreidPrint}`} />
 		<meta property="og:description" content="Connect to Core ID via CorePass." />
