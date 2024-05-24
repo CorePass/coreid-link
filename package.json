@@ -1,6 +1,6 @@
 {
 	"name": "coreid-link",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
@@ -37,7 +37,10 @@
 	"dependencies": {
 		"@blockchainhub/blo": "^1.2.1",
 		"@blockchainhub/ican": "^0.4.0",
+		"@cloudflare/pages-plugin-vercel-og": "^0.1.2",
+		"@cloudflare/workers-types": "^4.20240512.0",
 		"device-sherlock": "^0.2.1",
-		"qrcode": "^1.5.3"
+		"qrcode": "^1.5.3",
+		"react": "^18.3.1"
 	}
 }

@@ -8,10 +8,10 @@
 	<meta property="og:title" content="Core ID" />
 	<meta property="og:description" content="Create a Core ID connector." />
 	<meta property="og:type" content="website" />
-	<meta property="og:image" content={imgInfo} />
+	<meta property="og:image" content="/og-intro" />
 	<meta name="twitter:title" content="Core ID" />
 	<meta name="twitter:description" content="Create a Core ID connector." />
-	<meta name="twitter:image" content={imgInfo} />
+	<meta name="twitter:image" content="/og-intro" />
 </svelte:head>
 
 <div class="divide-y divide-gray-300/50">
