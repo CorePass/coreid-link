@@ -1,17 +1,13 @@
-<script lang="ts">
-	const imgInfo = `https://og.tailgraph.com/og?fontFamily=Abel&title=Connect%20to%20Core%20ID%20via%20CorePass&titleTailwind=font-bold%20text-4xl%20text-blue-900&titleFontFamily=Poppins&text=Append%20Core%20ID%20after%20the%20URL's%20final%20slash.&textTailwind=mt-4%20text-4xl%20text-blue-900%20font-semibold&textFontFamily=Dosis&bgTailwind=bg-blue-400`;
-</script>
-
 <svelte:head>
 	<title>Core ID</title>
 	<meta name="description" content="Create a Core ID connector." />
 	<meta property="og:title" content="Core ID" />
 	<meta property="og:description" content="Create a Core ID connector." />
 	<meta property="og:type" content="website" />
-	<meta property="og:image" content="/og-intro" />
+	<meta property="og:image" content="/og-image-intro" />
 	<meta name="twitter:title" content="Core ID" />
 	<meta name="twitter:description" content="Create a Core ID connector." />
-	<meta name="twitter:image" content="/og-intro" />
+	<meta name="twitter:image" content="/og-image-intro" />
 </svelte:head>
 
 <div class="divide-y divide-gray-300/50">

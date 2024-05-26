@@ -13,37 +13,55 @@
 	function getAddressIconUrl(address: string): string {
 		return blo(address);
 	}
+
+	const metaObject = {
+		valid: {
+			title: 'Connect to Core ID via CorePass',
+		},
+		missing: {
+			title: 'Missing Core ID',
+			description: 'Core ID is missing or not defined.',
+		},
+		invalid: {
+			title: 'Invalid Core ID',
+			description: 'This Core ID is invalid, please correct it.',
+		},
+	};
 </script>
 
 <svelte:head>
 	{#if coreid && isValidCoreid}
 		<title>Core ID: {coreidShort} ≡ {coreidPrint}</title>
-		<meta name="description" content="Connect to Core ID via CorePass" />
-		<meta property="og:title" content="Connect to Core ID via CorePass" />
+		<meta name="description" content={metaObject.valid.title} />
+		<meta property="og:title" content={metaObject.valid.title} />
 		<meta property="og:description" content={coreidPrint} />
 		<meta property="og:type" content="profile" />
-		<meta name="twitter:title" content="Connect to Core ID via CorePass" />
+		<meta name="twitter:title" content={metaObject.valid.title} />
 		<meta name="twitter:description" content={coreidPrint} />
 		<meta property="ican:xcb" content={coreid} />
+		<meta property="og:image" content={`/og-image-coreid?title=${encodeURIComponent(metaObject.valid.title)}&subtitle=${encodeURIComponent(coreidPrint)}`} />
+		<meta name="twitter:image" content={`/og-image-coreid?title=${encodeURIComponent(metaObject.valid.title)}&subtitle=${encodeURIComponent(coreidPrint)}`} />
 	{:else if !coreid}
-		<title>Missing Core ID</title>
-		<meta name="description" content="Core ID is missing or not defined." />
-		<meta property="og:title" content="Missing Core ID" />
-		<meta property="og:description" content="Core ID is missing or not defined." />
+		<title>{metaObject.missing.title}</title>
+		<meta name="description" content={metaObject.missing.description} />
+		<meta property="og:title" content={metaObject.missing.title} />
+		<meta property="og:description" content={metaObject.missing.description} />
 		<meta property="og:type" content="profile" />
-		<meta name="twitter:title" content="Missing Core ID" />
-		<meta name="twitter:description" content="Core ID is missing or not defined." />
+		<meta name="twitter:title" content={metaObject.missing.title} />
+		<meta name="twitter:description" content={metaObject.missing.description} />
+		<meta property="og:image" content={`/og-image-coreid?title=${encodeURIComponent(metaObject.missing.title)}&subtitle=${encodeURIComponent(metaObject.missing.description)}`} />
+		<meta name="twitter:image" content={`/og-image-coreid?title=${encodeURIComponent(metaObject.missing.title)}&subtitle=${encodeURIComponent(metaObject.missing.description)}`} />
 	{:else}
-		<title>Invalid Core ID</title>
-		<meta name="description" content="This Core ID is invalid, please correct it." />
-		<meta property="og:title" content="Invalid Core ID" />
-		<meta property="og:description" content="This Core ID is invalid, please correct it." />
+		<title>{metaObject.invalid.title}</title>
+		<meta name="description" content={metaObject.invalid.description} />
+		<meta property="og:title" content={metaObject.invalid.title} />
+		<meta property="og:description" content={metaObject.invalid.description} />
 		<meta property="og:type" content="profile" />
-		<meta name="twitter:title" content="Invalid Core ID" />
-		<meta name="twitter:description" content="This Core ID is invalid, please correct it." />
+		<meta name="twitter:title" content={metaObject.invalid.title} />
+		<meta name="twitter:description" content={metaObject.invalid.description} />
+		<meta property="og:image" content={`/og-image-coreid?title=${encodeURIComponent(metaObject.invalid.title)}&subtitle=${encodeURIComponent(metaObject.invalid.description)}`} />
+		<meta name="twitter:image" content={`/og-image-coreid?title=${encodeURIComponent(metaObject.invalid.title)}&subtitle=${encodeURIComponent(metaObject.invalid.description)}`} />
 	{/if}
-	<meta property="og:image" content="/coreid-image.png" />
-	<meta name="twitter:image" content="/coreid-image.png" />
 </svelte:head>
 
 <div>
