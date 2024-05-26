@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "routes": [
+    {
+      "pattern": "/og-image-intro",
+      "custom_domain": false
+    },
+    {
+      "pattern": "/og-image-coreid/*",
+      "custom_domain": false
+    }
+  ]
+}
