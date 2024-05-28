@@ -7,7 +7,7 @@
 
 	const coreid = $page.params.coreid;
 	const coreidPrint = coreid ? Ican.printFormat(coreid, ' ') : '';
-	const coreidShort = coreid ? Ican.shortFormat(coreid, '*') : '';
+	const coreidShort = coreid ? Ican.shortFormat(coreid, '⋯') : '';
 	const isValidCoreid = Ican.isValid(coreid, true);
 
 	function getAddressIconUrl(address: string): string {
