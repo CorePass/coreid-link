@@ -74,7 +74,7 @@
 	<div class="divide-y divide-gray-300/50 text-slate-500 dark:text-slate-400">
 		{#if coreid && isValidCoreid}
 			<Qr param={coreid} />
-			{#if deviceSherlock.isMobile}
+			{#if deviceSherlock.isMobileOrTablet}
 				<div class="pt-8 text-base leading-7">
 					<a
 						href={`coreid:${coreid}`}

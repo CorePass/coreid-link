@@ -3,15 +3,29 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
-	// for more information about preprocessors
+	// Use vitePreprocess as defined by the SvelteKit documentation
 	preprocess: vitePreprocess(),
 
 	kit: {
-		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
-		// If your environment is not supported, or you settled on a specific environment, switch out the adapter.
-		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
-		adapter: adapter()
+		adapter: adapter(),
+
+		// Vite server configuration
+		vite: {
+			server: {
+				proxy: {
+					'/og-image-coreid': {
+						target: process.env.CLOUDFLARE_PAGES_URL,
+						changeOrigin: true,
+						rewrite: (path) => path.replace(/^\/og-image-coreid/, '/functions/og-image-coreid')
+					},
+					'/og-image-intro': {
+						target: process.env.CLOUDFLARE_PAGES_URL,
+						changeOrigin: true,
+						rewrite: (path) => path.replace(/^\/og-image-intro/, '/functions/og-image-intro')
+					}
+				}
+			}
+		}
 	}
 };
 
