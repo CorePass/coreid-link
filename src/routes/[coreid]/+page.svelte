@@ -77,7 +77,7 @@
 			{#if deviceSherlock.isMobile}
 				<div class="pt-8 text-base leading-7">
 					<a
-						href={`corepass:${coreid}`}
+						href={`coreid:${coreid}`}
 						rel="noopener noreferrer"
 						class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
 					>Open in CorePass</a>
