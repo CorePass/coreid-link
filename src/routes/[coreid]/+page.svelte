@@ -39,8 +39,8 @@
 		<meta name="twitter:title" content={metaObject.valid.title} />
 		<meta name="twitter:description" content={coreidPrint} />
 		<meta property="ican:xcb" content={coreid} />
-		<meta property="og:image" content={`/og-image-coreid?title=${encodeURIComponent(metaObject.valid.title)}&subtitle=${encodeURIComponent(coreidPrint)}`} />
-		<meta name="twitter:image" content={`/og-image-coreid?title=${encodeURIComponent(metaObject.valid.title)}&subtitle=${encodeURIComponent(coreidPrint)}`} />
+		<meta property="og:image" content={`/og-image-coreid.png`} />
+		<meta name="twitter:image" content={`/og-image-coreid.png`} />
 	{:else if !coreid}
 		<title>{metaObject.missing.title}</title>
 		<meta name="description" content={metaObject.missing.description} />
@@ -49,8 +49,8 @@
 		<meta property="og:type" content="profile" />
 		<meta name="twitter:title" content={metaObject.missing.title} />
 		<meta name="twitter:description" content={metaObject.missing.description} />
-		<meta property="og:image" content={`/og-image-coreid?title=${encodeURIComponent(metaObject.missing.title)}&subtitle=${encodeURIComponent(metaObject.missing.description)}`} />
-		<meta name="twitter:image" content={`/og-image-coreid?title=${encodeURIComponent(metaObject.missing.title)}&subtitle=${encodeURIComponent(metaObject.missing.description)}`} />
+		<meta property="og:image" content={`/og-image-coreid.png`} />
+		<meta name="twitter:image" content={`/og-image-coreid.png`} />
 	{:else}
 		<title>{metaObject.invalid.title}</title>
 		<meta name="description" content={metaObject.invalid.description} />
@@ -59,8 +59,8 @@
 		<meta property="og:type" content="profile" />
 		<meta name="twitter:title" content={metaObject.invalid.title} />
 		<meta name="twitter:description" content={metaObject.invalid.description} />
-		<meta property="og:image" content={`/og-image-coreid?title=${encodeURIComponent(metaObject.invalid.title)}&subtitle=${encodeURIComponent(metaObject.invalid.description)}`} />
-		<meta name="twitter:image" content={`/og-image-coreid?title=${encodeURIComponent(metaObject.invalid.title)}&subtitle=${encodeURIComponent(metaObject.invalid.description)}`} />
+		<meta property="og:image" content={`/og-image-coreid.png`} />
+		<meta name="twitter:image" content={`/og-image-coreid.png`} />
 	{/if}
 </svelte:head>
 

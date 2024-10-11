@@ -2,6 +2,7 @@
 	"name": "coreid-link",
 	"version": "0.1.3",
 	"private": true,
+	"license": "CORE",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -40,7 +41,6 @@
 		"@blockchainhub/ican": "^0.4.1",
 		"@cloudflare/pages-plugin-vercel-og": "^0.1.2",
 		"@cloudflare/workers-types": "^4.20241004.0",
-		"@sveltejs/adapter-cloudflare": "^4.7.2",
 		"device-sherlock": "^0.2.1",
 		"qrcode": "^1.5.4",
 		"react": "^18.3.1"

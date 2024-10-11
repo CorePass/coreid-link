@@ -1,38 +1,67 @@
-# create-svelte
+# Core ID Connector Application
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+This is a SvelteKit application that generates and displays a Core ID QR code when provided with a valid Core ID. The application checks the validity of the Core ID and presents different content based on whether the ID is valid, missing, or invalid. It also includes meta tags for Open Graph and Twitter Cards, making the Core ID sharable across social media.
 
-## Creating a project
+## Features
 
-If you're seeing this, you've probably already done this step. Congrats!
+- Generates a QR code for valid Core IDs.
+- Displays messages if the Core ID is missing or invalid.
+- Provides a sharable Open Graph and Twitter preview for Core IDs.
+- Supports opening the Core ID in CorePass on mobile devices.
+- Built using SvelteKit and TypeScript.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Usage
 
-# create a new project in my-app
-npm create svelte@latest my-app
+### URL Format
+
+To use the application, format your URL as follows:
+
+```txt
+https://coreid.link/[your-core-id]
 ```
 
-## Developing
+Replace `[your-core-id]` with a valid Core ID. If the Core ID is valid, the application will display the QR code and allow the user to open the Core ID in CorePass on mobile devices.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### Example
+
+```txt
+https://coreid.link/cb2266fec7f127e2f884f0fbbcbf45dfd6fad5401922
+```
+
+This will display a QR code for the Core ID `cb2266fec7f127e2f884f0fbbcbf45dfd6fad5401922`.
+
+## Meta Tags
+
+The application uses dynamic meta tags to improve sharing across social media platforms like Facebook and Twitter. The meta tags are dynamically generated based on the Core ID validity and include the following:
+
+- **Open Graph Meta Tags** for generating previews in social media posts.
+- **Twitter Card Meta Tags** for generating previews in Twitter posts.
+
+## Scripts
+
+### Development
+
+To start the development server:
 
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+### Build
 
-To create a production version of your app:
+To build the application for production:
 
 ```bash
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+## Dependencies
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+- **@blockchainhub/ican**: Provides Core ID formatting and validation functions.
+- **@blockchainhub/blo**: Used to generate address icons.
+- **device-sherlock**: Determines if the application is being accessed on mobile devices.
+- **qrcode**: Generates QR codes for valid Core IDs.
+
+## License
+
+This project is licensed under the [Core License](LICENSE).
