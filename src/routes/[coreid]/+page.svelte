@@ -84,11 +84,11 @@
 				</div>
 			{/if}
 		{:else if !coreid}
-			<p class="mb-4 font-bold">Missing Core ID</p>
-			<p class="text-sm pt-4">Tip: Please add your Core ID to the URL.</p>
+			<p class="mb-4 font-bold">Core ID is missing</p>
+			<p class="text-sm pt-4">Please add your Core ID to the URL.</p>
 		{:else}
 			<p class="mb-4 font-bold">Invalid Core ID</p>
-			<p class="text-sm pt-4">Tip: Verify your Core ID or contact the sender to confirm and resend it.</p>
+			<p class="text-sm pt-4">Verify Core ID or contact the sender to confirm and resend it.</p>
 		{/if}
 	</div>
 </div>
