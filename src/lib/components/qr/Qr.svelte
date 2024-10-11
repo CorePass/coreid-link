@@ -8,7 +8,7 @@
 	let canvas: HTMLCanvasElement;
 
 	onMount(async () => {
-		const qrText = `corepass:${param.toUpperCase()}`;
+		const qrText = `coreid:${param.toUpperCase()}`;
 		QRCode.toCanvas(canvas, qrText, { errorCorrectionLevel: 'H' }, function (error: Error | null | undefined) {
 			if (error) console.error(error);
 		});
