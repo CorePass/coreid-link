@@ -1,5 +1,0 @@
-# Redirect og-image-coreid requests to the Cloudflare Pages function
-/og-image-coreid/* /functions/og-image-coreid 302
-
-# Redirect og-image-intro requests to the Cloudflare Pages function
-/og-image-intro/* /functions/og-image-intro 302
