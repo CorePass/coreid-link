@@ -18,6 +18,20 @@ body {
 	min-height: 100vh;
 }
 
+body {
+	--cid-s: 40px;
+	--cid-_s: calc(1.5 * var(--cid-s)) / calc(4 * var(--cid-s)) calc(3 * var(--cid-s));
+	background:
+		radial-gradient(calc(1.5 * var(--cid-s)) at 37.5% 0%, #0000 39%, #254374 40% 93%, #0000 94%)
+			calc(-0.5 * var(--cid-s)) var(--cid-_s),
+		radial-gradient(calc(1.5 * var(--cid-s)) at 37.5% 100%, #0000 39%, #254374 40% 93%, #0000 94%)
+			calc(1.5 * var(--cid-s)) var(--cid-_s),
+		radial-gradient(25% calc(50% / 3), #0000 96%, #1f3a61)
+			0 0 / calc(2 * var(--cid-s)) calc(3 * var(--cid-s)),
+		repeating-conic-gradient(#113e7e 0 25%, #0f2e57 0 50%)
+			0 0 / calc(4 * var(--cid-s)) calc(6 * var(--cid-s));
+}
+
 h1 {
 	font-size: 3.2em;
 	line-height: 1.1;
