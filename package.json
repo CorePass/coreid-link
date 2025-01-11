@@ -1,8 +1,17 @@
 {
 	"name": "coreid-link",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"private": true,
 	"license": "CORE",
+	"author": "Rastislav Vašička <@rastislav@coretalk.space>",
+	"homepage": "https://github.com/CorePass/coreid-link#readme",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/CorePass/coreid-link"
+	},
+	"bugs": {
+		"url": "https://github.com/CorePass/coreid-link/issues"
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -14,35 +23,35 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.3.1",
-		"@sveltejs/kit": "^2.9.0",
-		"@sveltejs/vite-plugin-svelte": "^4.0.0-next.1",
+		"@sveltejs/kit": "^2.15.2",
+		"@sveltejs/vite-plugin-svelte": "^4.0.2",
 		"@types/eslint": "^9.6.1",
 		"@types/qrcode": "^1.5.5",
-		"@types/react": "^18.3.13",
-		"@typescript-eslint/eslint-plugin": "^8.17.0",
-		"@typescript-eslint/parser": "^8.17.0",
+		"@types/react": "^19.0.4",
+		"@typescript-eslint/eslint-plugin": "^8.19.1",
+		"@typescript-eslint/parser": "^8.19.1",
 		"autoprefixer": "^10.4.20",
-		"eslint": "^9.16.0",
+		"eslint": "^9.18.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.46.1",
 		"postcss": "^8.4.49",
 		"prettier": "^3.4.2",
 		"prettier-plugin-svelte": "^3.3.2",
-		"svelte": "^5.6.2",
-		"svelte-check": "^4.1.1",
-		"tailwindcss": "^3.4.16",
+		"svelte": "^5.17.3",
+		"svelte-check": "^4.1.3",
+		"tailwindcss": "^3.4.17",
 		"tslib": "^2.8.1",
-		"typescript": "^5.7.2",
+		"typescript": "^5.7.3",
 		"vite": "^5.4.11"
 	},
 	"type": "module",
 	"dependencies": {
 		"@blockchainhub/blo": "^1.2.1",
-		"@blockchainhub/ican": "^0.4.1",
+		"@blockchainhub/ican": "^0.4.2",
 		"@cloudflare/pages-plugin-vercel-og": "^0.1.2",
-		"@cloudflare/workers-types": "^4.20241202.0",
+		"@cloudflare/workers-types": "^4.20250109.0",
 		"device-sherlock": "^0.2.1",
 		"qrcode": "^1.5.4",
-		"react": "^18.3.1"
+		"react": "^19.0.0"
 	}
 }
