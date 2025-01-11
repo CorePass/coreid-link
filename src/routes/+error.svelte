@@ -24,18 +24,17 @@
 	</h1>
 	<div class="divide-y divide-gray-300/50 text-slate-500 dark:text-slate-400 pb-4">
 		{#if $page.status === 404}
-			<div class="pb-4">We can't seem to find the page you're looking for.</div>
+			<div class="pb-4">The page you're looking for cannot be found.</div>
 		{:else if $page.status === 500}
 			<div class="pb-4">
-				We're having trouble processing your request.
+				We're experiencing technical difficulties processing your request.
 			</div>
 			<div class="pb-4">
-				Please,
-				<a href="https://github.com/CorePass/coreid-link/issues" target="_blank" rel="noindex,nofollow">report the problem</a>
+				Please <a href="https://github.com/CorePass/coreid-link/issues" target="_blank" rel="noindex,nofollow">report this issue</a>
 				and try again later.
 			</div>
 		{:else}
-			<div class="pb-4">{$page.error?.message || 'Unexpected error.'}</div>
+			<div class="pb-4">{$page.error?.message || 'An unexpected error occurred.'}</div>
 		{/if}
 		<div class="pt-4">
 			<a href="/">Go back home.</a>

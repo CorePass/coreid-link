@@ -1,35 +1,13 @@
 import React from "react";
 import { ImageResponse } from "@cloudflare/pages-plugin-vercel-og/api";
 import vercelOGPagesPlugin from "@cloudflare/pages-plugin-vercel-og";
+import type { OGImageProps } from "./shared/og-image-types";
+import { OG_COLOR_MAPPING } from "./shared/og-image-types";
 
-interface Props {
-	ogTitle: string;
-	ogSubtitle: string;
-}
-
-export const onRequest = vercelOGPagesPlugin<Props>({
+export const onRequest = vercelOGPagesPlugin<OGImageProps>({
 	imagePathSuffix: "/og-image-coreid.png",
 	component: ({ ogTitle, ogSubtitle }) => {
-		let backgroundColor: string;
-		let color: string;
-
-		switch (ogTitle) {
-			case "Connect to Core ID via CorePass":
-				backgroundColor = "#61A5FA";
-				color = "#1C3B8B";
-				break;
-			case "Missing Core ID":
-				backgroundColor = "#FB943C";
-				color = "#7D2E12";
-				break;
-			case "Invalid Core ID":
-				backgroundColor = "#F77170";
-				color = "#7F1E1D";
-				break;
-			default:
-				backgroundColor = "#61A5FA";
-				color = "#1C3B8B";
-		}
+		const { backgroundColor, color } = OG_COLOR_MAPPING[ogTitle as keyof typeof OG_COLOR_MAPPING] || OG_COLOR_MAPPING.default;
 
 		return new ImageResponse(
 			<div
