@@ -1,12 +1,12 @@
 # Core ID Connector Application
 
-A SvelteKit application that generates and displays Core ID QR codes. When provided with a valid Core ID, it generates a scannable QR code and includes meta tags for social media sharing via Open Graph and Twitter Cards.
+A SvelteKit application for generating and displaying Core ID QR codes. When provided with a valid Core ID, it creates a scannable QR code and includes meta tags for social media sharing through Open Graph and Twitter Cards.
 
 ## Features
 
-- QR code generation for valid Core IDs
-- Validation status messages for Core IDs
-- Social media preview support via Open Graph and Twitter Cards
+- QR code generation for Core IDs
+- Real-time Core ID validation
+- Social media preview support
 - CorePass mobile app integration
 - Built with SvelteKit and TypeScript
 
@@ -14,13 +14,13 @@ A SvelteKit application that generates and displays Core ID QR codes. When provi
 
 ### URL Format
 
-Access the application using:
+The application is accessible at:
 
 ```txt
 https://coreid.link/[your-core-id]
 ```
 
-Replace `[your-core-id]` with a valid Core ID to generate its QR code and enable CorePass mobile integration.
+Replace `[your-core-id]` with your Core ID to generate a QR code and enable CorePass integration.
 
 ### Example
 
@@ -32,9 +32,9 @@ https://coreid.link/cb2266fec7f127e2f884f0fbbcbf45dfd6fad5401922
 
 ### Meta Tags
 
-The application dynamically generates meta tags for social media platforms:
+The application includes dynamic meta tags for social media:
 
-- Open Graph tags for Facebook and other platforms
+- Open Graph tags for Facebook and similar platforms
 - Twitter Card tags for Twitter previews
 
 ### Development

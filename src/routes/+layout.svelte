@@ -33,8 +33,8 @@
 	</header>
 
 	<main class="flex-1 p-8 w-full max-w-4xl mx-auto">
-		<div class="relative bg-white dark:bg-slate-800 px-6 pt-4 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg rounded-lg sm:px-10 max-w-xs">
-			<div class="mx-auto max-w-md">
+		<div class="relative bg-white dark:bg-slate-800 px-6 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg rounded-lg sm:px-10 max-w-xs">
+			<div class="mx-auto max-w-md pt-8 pb-8">
 				<slot />
 			</div>
 		</div>

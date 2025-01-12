@@ -1,17 +1,25 @@
 <script lang="ts">
-	import { page } from '$app/stores';
 	import { Qr } from '$lib/components';
 	import Ican from '@blockchainhub/ican';
 	import { blo } from "@blockchainhub/blo";
 	import { deviceSherlock } from 'device-sherlock';
+	import type { PageData } from './$types';
+	import { goto } from '$app/navigation';
+	import { browser } from '$app/environment';
 
-	const coreid = $page.params.coreid;
+	export let data: PageData;
+	const coreid = decodeURIComponent(data.coreid).replace(/\s+/g, '');
+
+	if (browser && data.coreid !== coreid) {
+		goto(`/${coreid}`, { replaceState: true });
+	}
+
 	const coreidPrint = coreid ? Ican.printFormat(coreid, ' ') : '';
 	const coreidShort = coreid ? Ican.shortFormat(coreid, '⋯') : '';
 	const isValidCoreid = Ican.isValid(coreid, true);
 
 	function getAddressIconUrl(address: string): string {
-		return blo(address);
+		return blo(address.toUpperCase());
 	}
 
 	const metaObject = {
@@ -71,11 +79,11 @@
 			<h1 class="text-xl leading-8 select-all cursor-pointer text-black dark:text-white">{coreidShort}</h1>
 		</div>
 	{/if}
-	<div class="divide-y divide-gray-300/50 text-slate-500 dark:text-slate-400">
+	<div class="divide-gray-300/50 text-slate-500 dark:text-slate-400">
 		{#if coreid && isValidCoreid}
 			<Qr param={coreid} />
 			{#if deviceSherlock.isMobileOrTablet}
-				<div class="pt-8 text-base leading-7">
+				<div class="text-base leading-7">
 					<a
 						href={`coreid:${coreid}`}
 						rel="noopener noreferrer"
@@ -84,11 +92,11 @@
 				</div>
 			{/if}
 		{:else if !coreid}
-			<p class="mb-4 font-bold">Core ID is missing</p>
-			<p class="text-sm pt-4">Please add your Core ID to the URL.</p>
+			<h2 class="text-xl leading-8 text-black dark:text-white">Core ID is missing</h2>
+			<p class="pt-4">Please add your Core ID to the URL.</p>
 		{:else}
-			<p class="mb-4 font-bold">Invalid Core ID</p>
-			<p class="text-sm pt-4">Verify Core ID or contact the sender to confirm and resend it.</p>
+			<h2 class="text-xl leading-8 text-black dark:text-white">Invalid Core ID</h2>
+			<p class="pt-4">Verify Core ID or contact the sender to confirm and resend it.</p>
 		{/if}
 	</div>
 </div>
