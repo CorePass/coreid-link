@@ -17,21 +17,20 @@
 		{#if data.status === 404}
 			Page Not Found
 		{:else if data.status === 500}
-			We have a problem!
+			Technical Issue
 		{:else}
 			Error {data.status}
 		{/if}
 	</h1>
 	<div class="text-slate-500 dark:text-slate-400">
 		{#if data.status === 404}
-			<div>The page you're looking for cannot be found.</div>
+			<div>This page doesn't exist.</div>
 		{:else if data.status === 500}
 			<div>
-				We're experiencing technical difficulties processing your request.
+				We're experiencing technical difficulties.
 			</div>
 			<div>
-				Please <a href="https://github.com/CorePass/coreid-link/issues" target="_blank" rel="noindex,nofollow">report this issue</a>
-				and try again later.
+				Please <a href="https://github.com/CorePass/coreid-link/issues" target="_blank" rel="noindex,nofollow">report this issue</a> and try again later.
 			</div>
 		{:else}
 			<div>{data.error}</div>
@@ -42,7 +41,7 @@
 					<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
 					<polyline points="9 22 9 12 15 12 15 22"/>
 				</svg>
-				Go back home
+				Return Home
 			</a>
 		</div>
 	</div>
