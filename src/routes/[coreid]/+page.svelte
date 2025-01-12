@@ -19,21 +19,21 @@
 	const isValidCoreid = Ican.isValid(coreid, true);
 
 	function getAddressIconUrl(address: string): string {
-		return blo(address.toUpperCase());
+		return blo(address);
 	}
 
 	const metaObject = {
 		valid: {
-			title: 'Connect to Core ID via CorePass',
+			title: 'Connect to Core ID via CorePass'
 		},
 		missing: {
 			title: 'Missing Core ID',
-			description: 'Core ID is missing or not defined.',
+			description: 'Core ID is missing.'
 		},
 		invalid: {
 			title: 'Invalid Core ID',
-			description: 'This Core ID is invalid, please correct it.',
-		},
+			description: 'This Core ID is invalid. Please verify and try again.'
+		}
 	};
 </script>
 
@@ -92,11 +92,11 @@
 				</div>
 			{/if}
 		{:else if !coreid}
-			<h2 class="text-xl leading-8 text-black dark:text-white">Core ID is missing</h2>
-			<p class="pt-4">Please add your Core ID to the URL.</p>
+			<h2 class="text-xl leading-8 text-black dark:text-white">Core ID Missing</h2>
+			<p class="pt-4">Please add a Core ID to the URL.</p>
 		{:else}
 			<h2 class="text-xl leading-8 text-black dark:text-white">Invalid Core ID</h2>
-			<p class="pt-4">Verify Core ID or contact the sender to confirm and resend it.</p>
+			<p class="pt-4">Please verify the Core ID or contact the sender for confirmation.</p>
 		{/if}
 	</div>
 </div>

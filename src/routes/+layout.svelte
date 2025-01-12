@@ -6,7 +6,7 @@
 <article class="flex flex-col h-screen justify-between text-black">
 	<header class="w-full p-4 flex justify-between items-center bg-gray-100 dark:bg-slate-800 opacity-85">
 		<a href="https://corepass.net" target="_blank" class="flex items-center gap-2" rel="noreferrer">
-			<img src="/icons/corepass.svg" alt="CorePass" class="h-8 w-auto">
+			<img src="/icons/corepass.svg" alt="CorePass Logo" class="h-8 w-auto">
 			<h1 class="text-2xl font-bold text-black dark:text-white">CorePass</h1>
 		</a>
 		{#if deviceSherlock.isIos}
@@ -43,11 +43,11 @@
 	<footer class="w-full p-2 text-center text-xs text-slate-500 dark:text-slate-400">
 		<div class="container mx-auto">
 			<a href="https://github.com/CorePass/coreid-link" target="_blank" rel="noreferrer">
-				Open-Source code
+				Open-source code
 			</a> licensed under the
 			<a href="https://github.com/bchainhub/core-license/blob/master/LICENSE" target="_blank" rel="noreferrer">
 				Core License
-			</a>.
+			</a>
 		</div>
 	</footer>
 </article>

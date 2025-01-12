@@ -27,7 +27,7 @@
 		"@sveltejs/vite-plugin-svelte": "^4.0.2",
 		"@types/eslint": "^9.6.1",
 		"@types/qrcode": "^1.5.5",
-		"@types/react": "^19.0.4",
+		"@types/react": "^19.0.5",
 		"@typescript-eslint/eslint-plugin": "^8.19.1",
 		"@typescript-eslint/parser": "^8.19.1",
 		"autoprefixer": "^10.4.20",
@@ -46,7 +46,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@blockchainhub/blo": "^1.2.1",
+		"@blockchainhub/blo": "^1.2.3",
 		"@blockchainhub/ican": "^0.4.2",
 		"@cloudflare/pages-plugin-vercel-og": "^0.1.2",
 		"@cloudflare/workers-types": "^4.20250109.0",
