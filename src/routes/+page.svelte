@@ -10,9 +10,11 @@
 	<meta name="twitter:image" content="/og-image-intro.png" />
 </svelte:head>
 
-<div class="divide-y divide-gray-300/50">
-	<h1 class="text-2xl font-bold pb-4 text-black dark:text-white">Core ID</h1>
-	<div class="pt-4 text-slate-500 dark:text-slate-400">
-		<p>To create a Core ID connector, simply format your URL as follows: <kbd>https://coreid.link/cb00…</kbd>, replacing "cb00…" with your valid Core ID address.</p>
-	</div>
+<div class="space-y-4">
+	<h2 class="text-xl leading-8 text-black dark:text-white">Core ID</h2>
+	<p class="text-base text-slate-500 dark:text-slate-400">
+		Create a Core ID connector by using this URL format:
+		<kbd class="text-sm">https://coreid.link/cb00…</kbd>
+		Replace <code class="text-sm">cb00…</code> with your Core ID address.
+	</p>
 </div>
