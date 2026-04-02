@@ -36,14 +36,23 @@
 	<meta name="twitter:image" content="/og-image-intro.png" />
 </svelte:head>
 
-<div class="space-y-4">
-	<h2 class="text-xl leading-8 text-black dark:text-white">Core ID</h2>
-	<p class="text-base text-slate-500 dark:text-slate-400">
-		Generate a QR code for your Core ID to enable quick and secure connections with CorePass.
-	</p>
-	<form on:submit|preventDefault={handleSubmit} class="space-y-4">
+<div class="space-y-5 text-center sm:text-left">
+	<div class="space-y-2">
+		<h1 class="text-lg font-semibold tracking-tight text-slate-900 dark:text-white sm:text-[1.0625rem]">
+			Core ID
+		</h1>
+		<p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+			Generate a QR code for your Core ID to enable quick and secure connections with CorePass.
+		</p>
+	</div>
+	<form on:submit|preventDefault={handleSubmit} class="space-y-3">
+		<label class="sr-only" for="coreid-input">Core ID</label>
 		<input
+			id="coreid-input"
 			type="text"
+			inputmode="text"
+			autocomplete="off"
+			spellcheck="false"
 			bind:value={coreid}
 			on:input={(e) => validateCoreid(e.currentTarget.value)}
 			on:paste={(e) => {
@@ -52,12 +61,14 @@
 				if (text) validateCoreid(text);
 			}}
 			placeholder="Enter your Core ID"
-			class="w-full px-3 py-2 rounded border {!isValid && coreid.length > 0 ? 'border-red-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-blue-500"
+			class="w-full rounded-xl border bg-slate-50 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 transition focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/35 dark:border-slate-600 dark:bg-slate-950/50 dark:text-slate-100 dark:placeholder:text-slate-500 {!isValid && coreid.length > 0
+				? 'border-red-500 focus:border-red-500 focus:ring-red-500/35'
+				: 'border-slate-200 dark:border-slate-600'}"
 		/>
 		<button
 			type="submit"
 			disabled={!isValid}
-			class="w-full px-4 py-2 rounded bg-blue-500 text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-blue-600 transition-colors"
+			class="w-full rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-blue-500/25 transition hover:bg-blue-500 hover:shadow-lg hover:shadow-blue-500/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-900 disabled:cursor-not-allowed disabled:opacity-45 disabled:shadow-none"
 		>
 			Create Connector
 		</button>
