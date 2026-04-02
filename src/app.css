@@ -1,6 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@config '../tailwind.config.js';
 
 :root {
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -16,9 +15,6 @@ body {
 	margin: 0;
 	min-width: 320px;
 	min-height: 100vh;
-}
-
-body {
 	--cid-s: 40px;
 	--cid-_s: calc(1.5 * var(--cid-s)) / calc(4 * var(--cid-s)) calc(3 * var(--cid-s));
 	background:
@@ -32,40 +28,6 @@ body {
 			0 0 / calc(4 * var(--cid-s)) calc(6 * var(--cid-s));
 }
 
-h1 {
-	font-size: 3.2em;
-	line-height: 1.1;
-}
-
-.card {
-	padding: 2em;
-}
-
-#app {
-	margin: 0 auto;
-	padding: 2rem;
-	text-align: center;
-}
-
-button {
-	border-radius: 8px;
-	border: 1px solid transparent;
-	padding: 0.6em 1.2em;
-	font-size: 1em;
-	font-weight: 500;
-	font-family: inherit;
-	background-color: #1a1a1a;
-	cursor: pointer;
-	transition: border-color 0.25s;
-}
-button:hover {
-	border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-	outline: 4px auto -webkit-focus-ring-color;
-}
-
 footer a {
 	border-bottom: 1px dotted;
 }
@@ -73,12 +35,8 @@ footer a {
 @media (prefers-color-scheme: light) {
 	:root {
 		color: #213547;
-		background-color: #ffffff;
 	}
 	a:hover {
 		color: #747bff;
-	}
-	button {
-		background-color: #f9f9f9;
 	}
 }
